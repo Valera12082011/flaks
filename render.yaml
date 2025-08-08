@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: flask-todo
+    env: python
+    plan: free
+    rootDir: Flask
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    autoDeploy: true
+    healthCheckPath: /
